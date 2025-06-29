@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Just for You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#fff0f5, #ffe6f0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    .btn-start, .btn-next {
+      padding: 15px 30px;
+      font-size: 1.3rem;
+      background-color: #ff85a2;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .btn-start:hover, .btn-next:hover {
+      transform: scale(1.05);
+      background-color: #ff5d8f;
+    }
+    .letter, .surprise {
+      display: none;
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease forwards;
+    }
+    .letter p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .surprise h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .surprise p {
+      font-size: 1.4rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <button class="btn-start">Tap to Open 💌</button>
+
+  <div class="letter">
+    <h2>I miss you na :< <h2>
+    <p>GEMENGAW</p>
+    <p>gemengaw pero gagmay</p>
+    <p> gimingaw gihapon</p>
+    <button class="btn-next">Next</button>
+  </div>
+
+  <div class="surprise">
+    <h1>🥺</h1>
+    <p>Ay ko byae please</p>
+    <p>Sad na kayko oh, di ka malouy 🥺 </p>
+  </div>
+</div>
+
+<script>
+  const btnStart = document.querySelector('.btn-start');
+  const letter = document.querySelector('.letter');
+  const surprise = document.querySelector('.surprise');
+  const btnNext = document.querySelector('.btn-next');
+
+  btnStart.addEventListener('click', () => {
+    btnStart.style.display = 'none';
+    letter.style.display = 'block';
+  });
+
+  btnNext.addEventListener('click', () => {
+    letter.style.display = 'none';
+    surprise.style.display = 'block';
+  });
+</script>
+</body>
+</html>
